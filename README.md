@@ -3,7 +3,8 @@
 Este projeto é um formulário de inscrição com layout moderno e responsivo, ideal para eventos, cursos ou inscrições diversas. Desenvolvido com foco em design limpo, usabilidade e responsividade.
 
 ## 📷 Preview
-![Preview do Formulário](img/bannerform.png)
+![Preview do Formulário](![image](https://github.com/user-attachments/assets/03de971e-d95e-422a-ad5c-5bd005234676)
+)
 
 
 ## 🚀 Funcionalidades
