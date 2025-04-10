@@ -4,7 +4,7 @@ Este projeto é um formulário de inscrição com layout moderno e responsivo, i
 
 ## 📷 Preview
 
-![preview do formulário]![image](https://github.com/user-attachments/assets/ffbda157-0d8b-47e6-9b54-51daa735f11c)
+](https://github.com/user-attachments/assets/ffbda157-0d8b-47e6-9b54-51daa735f11c)
 
 
 ## 🚀 Funcionalidades
