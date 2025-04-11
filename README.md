@@ -47,7 +47,7 @@ Este projeto é um formulário de inscrição com layout moderno e responsivo, i
 
 ```
 
-## 👨‍💻 Desenvolvedor
+## 👨‍💻 Desenvolvedores
 
 - GitHub: [TheNerdzin](https://github.com/TheNerdzin)
 - Email: peterparck157@gmail.com
