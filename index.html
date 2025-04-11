@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Inscrição</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/app.js" defer></script>
+</head>
+
+<body>
+    <main class="conteudo">
+        <!-- Coluna do formulário -->
+        <section class="coluna-formulario">
+            <section class="formulario" id="inicio">
+                <div class="formulario-conteudo">
+                    <!-- Botão voltar -->
+                    <div class="voltar">
+                        <a href="/login.html" class="link-container" aria-label="Voltar para login">
+                            <img src="/img/image.png" alt="Ícone de voltar" class="Voltar" style="cursor: pointer;" />
+                        </a>
+                    </div>
+
+                    <h1>Formulário de Inscrição</h1>
+                    <p class="subtitulo">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
+
+                    <form id="formularioInscricao">
+                        <!-- Login -->
+                        <fieldset>
+                            <legend>Cadastro de Login</legend>
+
+                            <label for="usuarioID">Crie seu ID de Usuário:</label>
+                            <input type="text" id="usuarioID" name="usuarioID" required />
+
+                            <label for="senha">Crie sua senha:</label>
+                            <input type="password" id="senha" name="senha" required />
+                        </fieldset>
+
+                        <!-- Participante -->
+                        <fieldset>
+                            <legend>Informações do participante</legend>
+
+                            <label for="nome">Nome completo:</label>
+                            <input type="text" id="nome" name="nome" required />
+
+                            <div class="linha">
+                                <div>
+                                    <label for="dataNascimento">Data de nascimento:</label>
+                                    <input id="dataNascimento" type="date" max="2025-12-31" required />
+                                </div>
+                                <div>
+                                    <label for="documentoCPF">CPF:</label>
+                                    <input type="text" id="documentoCPF" name="documentoCPF" required />
+                                </div>
+                            </div>
+
+                            <div class="linha">
+                                <!-- SEXOO -->
+                                <div>
+                                    <label for="genero">Sexo:</label>
+                                    <select id="genero" name="genero" required>
+                                        <option value="">Selecione</option>
+                                        <option value="feminino">Feminino</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                                <!-- email -->
+                                <div>
+                                    <label for="emailUsuario">E-mail:</label>
+                                    <input type="text" id="emailUsuario" name="emailUsuario" required />
+                                </div>
+                            </div>
+                            <!-- Telefone -->
+                            <div class="linha">
+                                <div>
+                                    <label for="telefone">Telefone:</label>
+                                    <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000"
+                                        required />
+                                </div>
+                                <div>
+                                    <!-- Espaço vazio para alinhamento -->
+                                    <label style="visibility: hidden;">Espaço</label>
+                                    <div style="height: 40px;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Documento -->
+                            <label for="identidade">Documento de identidade:</label>
+                            <div class="upload-arquivo">
+                                <img id="imgIdentidade" src="/img/upload.png" alt="Upload Documento"
+                                    onclick="document.getElementById('identidade').click()" />
+                                <input type="file" id="identidade" name="identidade" hidden
+                                    onchange="previewArquivo(this, 'imgIdentidade')" />
+                            </div>
+                        </fieldset>
+                        <!-- Endereço -->
+                        <fieldset>
+                            <legend>Endereço residencial</legend>
+
+                            <div class="linha">
+                                <div>
+                                    <label for="cepUsuario">CEP:</label>
+                                    <input type="text" id="cepUsuario" name="cepUsuario" required />
+                                </div>
+                                <div>
+                                    <label for="logradouro">Rua:</label>
+                                    <input type="text" id="logradouro" name="logradouro" required />
+                                </div>
+                            </div>
+
+                            <div class="linha">
+                                <div>
+                                    <label for="numeroCasa">Número:</label>
+                                    <input type="text" id="numeroCasa" name="numeroCasa" required />
+                                </div>
+                                <div>
+                                    <label for="cidade">Cidade:</label>
+                                    <input type="text" id="cidade" name="cidade" required />
+                                </div>
+                            </div>
+
+                            <label for="estado">Estado:</label>
+                            <input type="text" id="estado" name="estado" required />
+                        </fieldset>
+
+                        <!-- Comprovante de residência -->
+                        <fieldset>
+                            <legend>Comprovante de residência</legend>
+                            <div class="upload-arquivo">
+                                <img id="imgResidencia" src="/img/upload.png" alt="Upload Comprovante"
+                                    onclick="document.getElementById('residencia').click()" />
+                                <input type="file" id="residencia" name="residencia" hidden
+                                    onchange="previewArquivo(this, 'imgResidencia')" />
+                            </div>
+                        </fieldset>
+
+                        <!-- Trilhas -->
+                        <fieldset>
+                            <legend>Trilhas de aprendizagem</legend>
+                            <div class="selecao-trilha">
+                                <label class="opcao-trilha">
+                                    <input type="radio" name="trilha" value="frontend" required />
+                                    <img src="/img/front.png" alt="Front-end" />
+                                    <span>Programação Front-end</span>
+                                </label>
+
+                                <label class="opcao-trilha">
+                                    <input type="radio" name="trilha" value="backend" />
+                                    <img src="/img/backend.png" alt="Back-end" />
+                                    <span>Programação Back-end</span>
+                                </label>
+
+                                <label class="opcao-trilha">
+                                    <input type="radio" name="trilha" value="games" />
+                                    <img src="/img/games.png" alt="Jogos" />
+                                    <span>Programação de Jogos</span>
+                                </label>
+
+                                <label class="opcao-trilha">
+                                    <input type="radio" name="trilha" value="design" />
+                                    <img src="/img/design.png" alt="Design" />
+                                    <span>Design e Experiência</span>
+                                </label>
+
+                                <label class="opcao-trilha">
+                                    <input type="radio" name="trilha" value="data" />
+                                    <img src="/img/data.png" alt="Dados" />
+                                    <span>Ciência de Dados</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Termos -->
+                        <div class="politica">
+                            <input type="checkbox" id="termos" name="termos" required />
+                            <label for="termos">Li e concordo com os Termos e a Política de Privacidade.</label>
+                        </div>
+
+                        <div class="politica">
+                            <input type="checkbox" id="lgpd" name="lgpd" required />
+                            <label for="lgpd">Concordo com a LGPD.</label>
+                        </div>
+
+                        <!-- Botão -->
+                        <div class="botao-area">
+                            <button type="submit" class="botao-inscricao">Fazer inscrição</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </section>
+
+        <!-- Coluna imagem decorativa -->
+        <aside class="coluna-imagem"></aside>
+    </main>
+</body>
+
+</html>

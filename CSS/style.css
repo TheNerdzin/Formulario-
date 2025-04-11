@@ -1,0 +1,453 @@
+/* =========================
+IMPORTAÇÃO DE FONTES
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+VARIÁVEIS GLOBAIS
+========================= */
+:root {
+    --font-primaria: 'Poppins', sans-serif;
+    --cor-primaria: #f3541c;
+    --cor-secundaria: #27ae60;
+    --cor-texto: #333;
+    --cor-texto-claro: #666;
+    --cor-borda: #ddd;
+    --cor-fundo: #f4f4f4;
+    --sombra-box: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transicao-rapida: all 0.3s ease;
+}
+
+/* =========================
+ESTILOS GERAIS
+========================= */
+body {
+    font-family: var(--font-primaria);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* =========================
+LAYOUT PRINCIPAL - DESKTOP (PADRÃO)
+========================= */
+.conteudo {
+    display: flex;
+    width: 100%;
+    margin-top: 80px;
+    flex: 1;
+}
+
+.coluna-formulario {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: var(--sombra-box);
+}
+
+.coluna-imagem {
+    width: 40%;
+    background-image: url('/img/bannerform.png');
+    background-size: cover;
+    background-position: center;
+    position: sticky;
+    top: 20px; 
+    height: calc(100vh - 80px);
+}
+
+/* =========================
+FORMULÁRIO
+========================= */
+.formulario {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.formulario h1 {
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.formulario h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--cor-primaria);
+}
+
+.formulario h2 {
+    font-size: 1.4rem;
+    color: var(--cor-texto);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* =========================
+MENSAGENS DE ERRO
+========================= */
+.erro {
+    color: #ff0000 !important;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+.erro-campo {
+    border: 1px solid #ff0000 !important;
+    background-color: #fff0f0;
+}
+
+
+/* =========================
+CAMPOS DO FORMULÁRIO
+========================= */
+
+.campo-container {
+    margin-bottom: 1rem;
+    position: relative; 
+}
+
+.erro {
+    color: #ff0000;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+.campo-formulario {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--cor-texto);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    transition: var(--transicao-rapida);
+    font-family: var(--font-primaria);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 2px rgba(243, 84, 28, 0.2);
+}
+
+/* =========================
+LAYOUT DE LINHAS
+========================= */
+.linha {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.linha > div {
+    flex: 1;
+}
+
+/* =========================
+SELEÇÃO DE TRILHA
+========================= */
+.selecao-trilha {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.opcao-trilha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem;
+    border: 2px solid var(--cor-borda);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transicao-rapida);
+    background-color: white;
+}
+
+.opcao-trilha input[type="radio"] {
+    display: none;
+}
+
+.opcao-trilha img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s;
+}
+
+.opcao-trilha span {
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--cor-texto);
+    font-weight: 500;
+}
+
+.opcao-trilha.selected,
+.opcao-trilha:hover {
+    border-color: var(--cor-primaria);
+    background-color: rgba(243, 84, 28, 0.05);
+    transform: translateY(-3px);
+}
+
+/* =========================
+UPLOAD DE ARQUIVO
+========================= */
+.upload-arquivo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border: 2px dashed var(--cor-borda);
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: var(--transicao-rapida);
+    text-align: center;
+    margin: 1.5rem 0;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.upload-arquivo:hover {
+    border-color: var(--cor-primaria);
+    background-color: rgba(243, 84, 28, 0.05);
+}
+
+.upload-arquivo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.upload-arquivo:hover img {
+    transform: scale(0.95);
+}
+
+/* =========================
+BOTÕES
+========================= */
+.botao-area {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.botao {
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transicao-rapida);
+    text-align: center;
+    border: none;
+    font-family: var(--font-primaria);
+    font-size: 1rem;
+}
+
+.botao-primario {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.botao-primario:hover {
+    background-color: #d84315;
+    transform: translateY(-2px);
+}
+
+.botao-secundario {
+    background-color: white;
+    color: var(--cor-primaria);
+    border: 1px solid var(--cor-primaria);
+}
+
+.botao-secundario:hover {
+    background-color: rgba(243, 84, 28, 0.05);
+}
+
+/* =========================
+POLÍTICA DE PRIVACIDADE
+========================= */
+.politica {
+    display: flex;
+    align-items: flex-start;
+    margin: 2rem 0;
+}
+
+.politica input {
+    width: auto;
+    margin-right: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.politica label {
+    font-weight: normal;
+    font-size: 0.95rem;
+    color: var(--cor-texto-claro);
+    text-align: left;
+}
+
+.politica a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.politica a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+MODAL
+========================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+RESPONSIVIDADE - MOBILE
+========================= */
+@media (max-width: 992px) {
+    .conteudo {
+        flex-direction: column;
+        margin-top: 70px;
+    }
+    
+    .coluna-imagem {
+        display: none;
+    }
+    
+    .coluna-formulario {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .formulario h1 {
+        font-size: 1.6rem;
+    }
+    
+    .formulario h2 {
+        font-size: 1.2rem;
+    }
+    
+    .linha {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .selecao-trilha {
+        grid-template-columns: 1fr;
+    }
+    
+    .opcao-trilha {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: 1rem;
+    }
+    
+    .opcao-trilha img {
+        width: 60px;
+        height: 60px;
+        margin-right: 1rem;
+    }
+    
+    .upload-arquivo {
+        padding: 1.5rem;
+    }
+    
+    .botao-area {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .botao {
+        width: 100%;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .coluna-formulario {
+        padding: 1.2rem;
+    }
+    
+    .formulario h1 {
+        font-size: 1.4rem;
+    }
+    
+    .opcao-trilha {
+        padding: 0.8rem;
+    }
+    
+    .politica {
+        align-items: center;
+    }
+    
+    .politica label {
+        font-size: 0.9rem;
+    }
+}

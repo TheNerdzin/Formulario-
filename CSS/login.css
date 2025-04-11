@@ -1,0 +1,86 @@
+/* ================================
+LOGIN
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container principal */
+.login-container {
+    max-width: 420px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eaeaea;
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    color: #111;
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin: 16px 0 6px;
+    font-weight: 500;
+    color: #444;
+    font-size: 15px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #fafafa;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Botão */
+.botao-login {
+    margin-top: 24px;
+    background-color: #f3541c;
+    color: white;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.botao-login:hover {
+    background-color: #d84315;
+}
+
+/* Mensagem de erro */
+.erro {
+    color: #e74c3c;
+    margin-top: 14px;
+    text-align: center;
+    font-weight: 500;
+}
